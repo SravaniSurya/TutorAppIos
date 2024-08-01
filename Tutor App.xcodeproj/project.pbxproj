@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		14456FB42C5B3CEE0075225C /* attendance.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14456FB32C5B3CEE0075225C /* attendance.swift */; };
 		597AD328BC57834C84F01250 /* Pods_Tutor_App.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E25C5D0AD89EAA52712AF001 /* Pods_Tutor_App.framework */; };
 		D92621EF2C47C671001BD2A3 /* TutorApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = D92621EE2C47C671001BD2A3 /* TutorApp.swift */; };
 		D92621F12C47C671001BD2A3 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D92621F02C47C671001BD2A3 /* ContentView.swift */; };
@@ -30,6 +31,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		14456FB32C5B3CEE0075225C /* attendance.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = attendance.swift; sourceTree = "<group>"; };
 		2DDBDFA8DDC0C9114D950C1E /* Pods-Tutor App.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Tutor App.debug.xcconfig"; path = "Target Support Files/Pods-Tutor App/Pods-Tutor App.debug.xcconfig"; sourceTree = "<group>"; };
 		5E9FA25876743E21B8C71C84 /* Pods-Tutor App.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Tutor App.release.xcconfig"; path = "Target Support Files/Pods-Tutor App/Pods-Tutor App.release.xcconfig"; sourceTree = "<group>"; };
 		D92621EB2C47C671001BD2A3 /* Tutor App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Tutor App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -114,6 +116,7 @@
 				D92621FE2C480CDA001BD2A3 /* SplashScreenView.swift */,
 				D926220E2C48197D001BD2A3 /* FirebaseManager.swift */,
 				D92621F22C47C673001BD2A3 /* Assets.xcassets */,
+				14456FB32C5B3CEE0075225C /* attendance.swift */,
 				D92621FC2C47C707001BD2A3 /* GoogleService-Info.plist */,
 				D92621F42C47C673001BD2A3 /* Preview Content */,
 			);
@@ -287,6 +290,7 @@
 				D926220D2C4817F8001BD2A3 /* TutorLoginView.swift in Sources */,
 				D92622112C481CAC001BD2A3 /* StudentLoginView.swift in Sources */,
 				D9FF14182C482A3E00C0E229 /* TutorResetPassword.swift in Sources */,
+				14456FB42C5B3CEE0075225C /* attendance.swift in Sources */,
 				D9FF141C2C482D5E00C0E229 /* ParentResetPassword.swift in Sources */,
 				D92622032C48118F001BD2A3 /* TutorSignUpView.swift in Sources */,
 				D926220F2C48197D001BD2A3 /* FirebaseManager.swift in Sources */,
