@@ -8,6 +8,10 @@
 
 /* Begin PBXBuildFile section */
 		14456FB42C5B3CEE0075225C /* attendance.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14456FB32C5B3CEE0075225C /* attendance.swift */; };
+		14456FB92C5B483A0075225C /* ParentSignUpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14456FB52C5B483A0075225C /* ParentSignUpView.swift */; };
+		14456FBA2C5B483A0075225C /* ParentLoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14456FB62C5B483A0075225C /* ParentLoginView.swift */; };
+		14456FBB2C5B483A0075225C /* ParentDashboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14456FB72C5B483A0075225C /* ParentDashboard.swift */; };
+		14456FBC2C5B483A0075225C /* ParentResetPassword.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14456FB82C5B483A0075225C /* ParentResetPassword.swift */; };
 		597AD328BC57834C84F01250 /* Pods_Tutor_App.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E25C5D0AD89EAA52712AF001 /* Pods_Tutor_App.framework */; };
 		D92621EF2C47C671001BD2A3 /* TutorApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = D92621EE2C47C671001BD2A3 /* TutorApp.swift */; };
 		D92621F12C47C671001BD2A3 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D92621F02C47C671001BD2A3 /* ContentView.swift */; };
@@ -18,20 +22,21 @@
 		D92622012C48103D001BD2A3 /* DashboardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D92622002C48103D001BD2A3 /* DashboardView.swift */; };
 		D92622032C48118F001BD2A3 /* TutorSignUpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D92622022C48118F001BD2A3 /* TutorSignUpView.swift */; };
 		D92622092C481393001BD2A3 /* StudentSignUpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D92622082C481393001BD2A3 /* StudentSignUpView.swift */; };
-		D926220B2C4815E5001BD2A3 /* ParentSignUpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D926220A2C4815E5001BD2A3 /* ParentSignUpView.swift */; };
 		D926220D2C4817F8001BD2A3 /* TutorLoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D926220C2C4817F8001BD2A3 /* TutorLoginView.swift */; };
 		D926220F2C48197D001BD2A3 /* FirebaseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D926220E2C48197D001BD2A3 /* FirebaseManager.swift */; };
 		D92622112C481CAC001BD2A3 /* StudentLoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D92622102C481CAC001BD2A3 /* StudentLoginView.swift */; };
-		D92622132C481CF6001BD2A3 /* ParentLoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D92622122C481CF6001BD2A3 /* ParentLoginView.swift */; };
 		D92622152C482125001BD2A3 /* TutorDashboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = D92622142C482125001BD2A3 /* TutorDashboard.swift */; };
 		D9FF14162C48279F00C0E229 /* Studentdashboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9FF14152C48279F00C0E229 /* Studentdashboard.swift */; };
 		D9FF14182C482A3E00C0E229 /* TutorResetPassword.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9FF14172C482A3E00C0E229 /* TutorResetPassword.swift */; };
 		D9FF141A2C482CFB00C0E229 /* StudentResetPassword.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9FF14192C482CFB00C0E229 /* StudentResetPassword.swift */; };
-		D9FF141C2C482D5E00C0E229 /* ParentResetPassword.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9FF141B2C482D5E00C0E229 /* ParentResetPassword.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		14456FB32C5B3CEE0075225C /* attendance.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = attendance.swift; sourceTree = "<group>"; };
+		14456FB52C5B483A0075225C /* ParentSignUpView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ParentSignUpView.swift; path = "../../../../Downloads/Archive 20/ParentSignUpView.swift"; sourceTree = "<group>"; };
+		14456FB62C5B483A0075225C /* ParentLoginView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ParentLoginView.swift; path = "../../../../Downloads/Archive 20/ParentLoginView.swift"; sourceTree = "<group>"; };
+		14456FB72C5B483A0075225C /* ParentDashboard.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ParentDashboard.swift; path = "../../../../Downloads/Archive 20/ParentDashboard.swift"; sourceTree = "<group>"; };
+		14456FB82C5B483A0075225C /* ParentResetPassword.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ParentResetPassword.swift; path = "../../../../Downloads/Archive 20/ParentResetPassword.swift"; sourceTree = "<group>"; };
 		2DDBDFA8DDC0C9114D950C1E /* Pods-Tutor App.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Tutor App.debug.xcconfig"; path = "Target Support Files/Pods-Tutor App/Pods-Tutor App.debug.xcconfig"; sourceTree = "<group>"; };
 		5E9FA25876743E21B8C71C84 /* Pods-Tutor App.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Tutor App.release.xcconfig"; path = "Target Support Files/Pods-Tutor App/Pods-Tutor App.release.xcconfig"; sourceTree = "<group>"; };
 		D92621EB2C47C671001BD2A3 /* Tutor App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Tutor App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -44,16 +49,13 @@
 		D92622002C48103D001BD2A3 /* DashboardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardView.swift; sourceTree = "<group>"; };
 		D92622022C48118F001BD2A3 /* TutorSignUpView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TutorSignUpView.swift; sourceTree = "<group>"; };
 		D92622082C481393001BD2A3 /* StudentSignUpView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudentSignUpView.swift; sourceTree = "<group>"; };
-		D926220A2C4815E5001BD2A3 /* ParentSignUpView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParentSignUpView.swift; sourceTree = "<group>"; };
 		D926220C2C4817F8001BD2A3 /* TutorLoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TutorLoginView.swift; sourceTree = "<group>"; };
 		D926220E2C48197D001BD2A3 /* FirebaseManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseManager.swift; sourceTree = "<group>"; };
 		D92622102C481CAC001BD2A3 /* StudentLoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudentLoginView.swift; sourceTree = "<group>"; };
-		D92622122C481CF6001BD2A3 /* ParentLoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParentLoginView.swift; sourceTree = "<group>"; };
 		D92622142C482125001BD2A3 /* TutorDashboard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TutorDashboard.swift; sourceTree = "<group>"; };
 		D9FF14152C48279F00C0E229 /* Studentdashboard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Studentdashboard.swift; sourceTree = "<group>"; };
 		D9FF14172C482A3E00C0E229 /* TutorResetPassword.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TutorResetPassword.swift; sourceTree = "<group>"; };
 		D9FF14192C482CFB00C0E229 /* StudentResetPassword.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudentResetPassword.swift; sourceTree = "<group>"; };
-		D9FF141B2C482D5E00C0E229 /* ParentResetPassword.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParentResetPassword.swift; sourceTree = "<group>"; };
 		E25C5D0AD89EAA52712AF001 /* Pods_Tutor_App.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Tutor_App.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -164,9 +166,10 @@
 		D92622072C481356001BD2A3 /* Parent */ = {
 			isa = PBXGroup;
 			children = (
-				D926220A2C4815E5001BD2A3 /* ParentSignUpView.swift */,
-				D92622122C481CF6001BD2A3 /* ParentLoginView.swift */,
-				D9FF141B2C482D5E00C0E229 /* ParentResetPassword.swift */,
+				14456FB72C5B483A0075225C /* ParentDashboard.swift */,
+				14456FB62C5B483A0075225C /* ParentLoginView.swift */,
+				14456FB82C5B483A0075225C /* ParentResetPassword.swift */,
+				14456FB52C5B483A0075225C /* ParentSignUpView.swift */,
 			);
 			path = Parent;
 			sourceTree = "<group>";
@@ -291,17 +294,18 @@
 				D92622112C481CAC001BD2A3 /* StudentLoginView.swift in Sources */,
 				D9FF14182C482A3E00C0E229 /* TutorResetPassword.swift in Sources */,
 				14456FB42C5B3CEE0075225C /* attendance.swift in Sources */,
-				D9FF141C2C482D5E00C0E229 /* ParentResetPassword.swift in Sources */,
+				14456FBB2C5B483A0075225C /* ParentDashboard.swift in Sources */,
 				D92622032C48118F001BD2A3 /* TutorSignUpView.swift in Sources */,
 				D926220F2C48197D001BD2A3 /* FirebaseManager.swift in Sources */,
+				14456FBC2C5B483A0075225C /* ParentResetPassword.swift in Sources */,
 				D92622152C482125001BD2A3 /* TutorDashboard.swift in Sources */,
 				D92622012C48103D001BD2A3 /* DashboardView.swift in Sources */,
 				D92621EF2C47C671001BD2A3 /* TutorApp.swift in Sources */,
-				D926220B2C4815E5001BD2A3 /* ParentSignUpView.swift in Sources */,
+				14456FB92C5B483A0075225C /* ParentSignUpView.swift in Sources */,
 				D9FF14162C48279F00C0E229 /* Studentdashboard.swift in Sources */,
 				D92622092C481393001BD2A3 /* StudentSignUpView.swift in Sources */,
 				D92621FF2C480CDA001BD2A3 /* SplashScreenView.swift in Sources */,
-				D92622132C481CF6001BD2A3 /* ParentLoginView.swift in Sources */,
+				14456FBA2C5B483A0075225C /* ParentLoginView.swift in Sources */,
 				D9FF141A2C482CFB00C0E229 /* StudentResetPassword.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
