@@ -15,6 +15,7 @@ struct TutorSignUpView: View {
     @State private var confirmPassword = ""
     @State private var errorMessage: String?
     @State private var isSignedUp = false
+    @State private var showSuccessPopup = false
     @State private var navigateToLogin = false
 
     var body: some View {
@@ -53,7 +54,7 @@ struct TutorSignUpView: View {
                     signupUser(email: email, password: password, username: username, userType: "tutor") { result in
                         switch result {
                         case .success:
-                            isSignedUp = true // Trigger navigation to TutorLoginView
+                            showSuccessPopup = true // Show success popup
                         case .failure(let error):
                             errorMessage = error.localizedDescription
                         }
@@ -91,6 +92,15 @@ struct TutorSignUpView: View {
                     EmptyView()
                 }
             )
+            .alert(isPresented: $showSuccessPopup) {
+                Alert(
+                    title: Text("Success"),
+                    message: Text("Your account has been created successfully!"),
+                    dismissButton: .default(Text("OK")) {
+                        navigateToLogin = true // Navigate to login view after dismissing the popup
+                    }
+                )
+            }
         }
     }
 }

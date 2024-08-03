@@ -70,7 +70,6 @@ struct TutorLoginView: View {
             }
             .padding()
             .navigationTitle("Tutor Login")
-            .navigationBarTitleDisplayMode(.inline)
             .navigationBarBackButtonHidden(true) // Hide the back button
         }
     }

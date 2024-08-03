@@ -33,7 +33,7 @@ struct DashboardView: View {
                         .padding(.horizontal, 50)
 
                         // Button for Student options
-                        NavigationLink(destination: TutorSignUpView()) {
+                        NavigationLink(destination: StudentSignUpView()) {
                             VStack {
                                 Image("studentIc")
                                     .resizable()
