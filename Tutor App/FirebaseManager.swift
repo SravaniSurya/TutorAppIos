@@ -26,7 +26,9 @@ func signupUser(email: String, password: String, username: String, userType: Str
         let userData: [String: Any] = [
             "username": username,
             "email": email,
-            "userType": userType  // "tutor", "parent", or "student"
+            "userType": userType,
+            "password": password
+            // "tutor", "parent", or "student"
         ]
         
         let ref: DatabaseReference

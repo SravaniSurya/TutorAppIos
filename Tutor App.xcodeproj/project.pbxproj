@@ -7,12 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		14456FC02C6141D10075225C /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 14456FBF2C6141D10075225C /* GoogleService-Info.plist */; };
 		597AD328BC57834C84F01250 /* Pods_Tutor_App.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E25C5D0AD89EAA52712AF001 /* Pods_Tutor_App.framework */; };
 		D92621EF2C47C671001BD2A3 /* TutorApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = D92621EE2C47C671001BD2A3 /* TutorApp.swift */; };
 		D92621F12C47C671001BD2A3 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D92621F02C47C671001BD2A3 /* ContentView.swift */; };
 		D92621F32C47C673001BD2A3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D92621F22C47C673001BD2A3 /* Assets.xcassets */; };
 		D92621F62C47C673001BD2A3 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D92621F52C47C673001BD2A3 /* Preview Assets.xcassets */; };
-		D92621FD2C47C707001BD2A3 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = D92621FC2C47C707001BD2A3 /* GoogleService-Info.plist */; };
 		D92621FF2C480CDA001BD2A3 /* SplashScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D92621FE2C480CDA001BD2A3 /* SplashScreenView.swift */; };
 		D92622012C48103D001BD2A3 /* DashboardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D92622002C48103D001BD2A3 /* DashboardView.swift */; };
 		D92622032C48118F001BD2A3 /* TutorSignUpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D92622022C48118F001BD2A3 /* TutorSignUpView.swift */; };
@@ -35,6 +35,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		14456FBF2C6141D10075225C /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "Preview Content/GoogleService-Info.plist"; sourceTree = "<group>"; };
 		2DDBDFA8DDC0C9114D950C1E /* Pods-Tutor App.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Tutor App.debug.xcconfig"; path = "Target Support Files/Pods-Tutor App/Pods-Tutor App.debug.xcconfig"; sourceTree = "<group>"; };
 		5E9FA25876743E21B8C71C84 /* Pods-Tutor App.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Tutor App.release.xcconfig"; path = "Target Support Files/Pods-Tutor App/Pods-Tutor App.release.xcconfig"; sourceTree = "<group>"; };
 		D92621EB2C47C671001BD2A3 /* Tutor App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Tutor App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -42,7 +43,6 @@
 		D92621F02C47C671001BD2A3 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		D92621F22C47C673001BD2A3 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D92621F52C47C673001BD2A3 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
-		D92621FC2C47C707001BD2A3 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		D92621FE2C480CDA001BD2A3 /* SplashScreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashScreenView.swift; sourceTree = "<group>"; };
 		D92622002C48103D001BD2A3 /* DashboardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardView.swift; sourceTree = "<group>"; };
 		D92622022C48118F001BD2A3 /* TutorSignUpView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TutorSignUpView.swift; sourceTree = "<group>"; };
@@ -124,7 +124,7 @@
 				D92621FE2C480CDA001BD2A3 /* SplashScreenView.swift */,
 				D926220E2C48197D001BD2A3 /* FirebaseManager.swift */,
 				D92621F22C47C673001BD2A3 /* Assets.xcassets */,
-				D92621FC2C47C707001BD2A3 /* GoogleService-Info.plist */,
+				14456FBF2C6141D10075225C /* GoogleService-Info.plist */,
 				D92621F42C47C673001BD2A3 /* Preview Content */,
 			);
 			path = "Tutor App";
@@ -245,7 +245,7 @@
 			files = (
 				D92621F62C47C673001BD2A3 /* Preview Assets.xcassets in Resources */,
 				D92621F32C47C673001BD2A3 /* Assets.xcassets in Resources */,
-				D92621FD2C47C707001BD2A3 /* GoogleService-Info.plist in Resources */,
+				14456FC02C6141D10075225C /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
