@@ -1,147 +1,75 @@
-//
-//  TutorDashboard.swift
-//  Tutor App
-//
-//  Created by Midhun on 17/07/24.
-//
-
 import SwiftUI
 
 struct TutorDashboard: View {
+    @State private var showUploadStorageView = false
+    @State private var showEditProfileView = false
+    @State private var showAssignmentListView = false
+    @State private var showAttendanceView = false // State for showing the TutorAttendanceView
+
     var body: some View {
-        GeometryReader { geometry in
+        NavigationStack {
             VStack(spacing: 20) {
-                Spacer()
-                Text("Tutor dashboard")
-                    .font(.title)
-                VStack(spacing: 20) {
-                    HStack {
-                        Spacer()
-                        Button(action: {
-                            print("Button Tapped")
-                        }) {
-                            VStack {
-                                Image("uploadIc")
-                                    .resizable()
-                                    .aspectRatio(contentMode: .fit)
-                                    .frame(width: 60, height: 50)
-                                Text("View Assignment")
-                                    .font(.system(size: 20).weight(.bold))
-                                    .foregroundColor(.black)
-                            }
-                            .padding()
-                            .background(RoundedRectangle(cornerRadius: 10).fill(Color.gray.opacity(0.2)))
-                            .frame(width: geometry.size.width * 0.4)
-                            Spacer()
-                        }
-                        
-                        Button(action: {
-                            print("Button Tapped")
-                        }) {
-                            VStack {
-                                Image("noteIc")
-                                    .resizable()
-                                    .aspectRatio(contentMode: .fit)
-                                    .frame(width: 60, height: 50)
-                                Text("View Notes")
-                                    .font(.system(size: 20).weight(.bold))
-                                    .foregroundColor(.black)
-                            }
-                            .padding()
-                            .background(RoundedRectangle(cornerRadius: 10).fill(Color.gray.opacity(0.2)))
-                            .frame(width: geometry.size.width * 0.4)
-                        }
-                        Spacer()
+                // Top row with assignment and upload buttons
+                HStack(spacing: 20) {
+                    Button(action: {
+                        showAssignmentListView.toggle()
+                    }) {
+                        DashboardButtonView(imageName: "uploadIc", title: "View Assignment")
                     }
-                    
-                    HStack {
-                        Spacer()
-                        Button(action: {
-                            print("Button Tapped")
-                        }) {
-                            VStack {
-                                Image("noteIc")
-                                    .resizable()
-                                    .aspectRatio(contentMode: .fit)
-                                    .frame(width: 60, height: 50)
-                                Text("Upload Assignment")
-                                    .font(.system(size: 20).weight(.bold))
-                                    .foregroundColor(.black)
-                            }
-                            .padding()
-                            .background(RoundedRectangle(cornerRadius: 10).fill(Color.gray.opacity(0.2)))
-                            .frame(width: geometry.size.width * 0.4)
-                            Spacer()
-                        }
-                        
-                        Button(action: {
-                            print("Button Tapped")
-                        }) {
-                            VStack {
-                                Image("uploadIc")
-                                    .resizable()
-                                    .aspectRatio(contentMode: .fit)
-                                    .frame(width: 60, height: 50)
-                                Text("Upload Notes")
-                                    .font(.system(size: 20).weight(.bold))
-                                    .foregroundColor(.black)
-                            }
-                            .padding()
-                            .background(RoundedRectangle(cornerRadius: 10).fill(Color.gray.opacity(0.2)))
-                            .frame(width: geometry.size.width * 0.4)
-                        }
-                        Spacer()
+                    .sheet(isPresented: $showAssignmentListView) {
+                        AssignmentListView()
                     }
-                    
-                    HStack {
-                        Spacer()
-                        Button(action: {
-                            print("Button Tapped")
-                        }) {
-                            VStack {
-                                Image("studentIc")
-                                    .resizable()
-                                    .aspectRatio(contentMode: .fit)
-                                    .frame(width: 60, height: 50)
-                                Text("Add People")
-                                    .font(.system(size: 20).weight(.bold))
-                                    .foregroundColor(.black)
-                            }
-                            .padding()
-                            .background(RoundedRectangle(cornerRadius: 10).fill(Color.gray.opacity(0.2)))
-                            .frame(width: geometry.size.width * 0.4) // Adjust as needed
-                            Spacer()
-                        }
-                        
-                        Button(action: {
-                            print("Button Tapped")
-                        }) {
-                            VStack {
-                                Image("attendenceIc")
-                                    .resizable()
-                                    .aspectRatio(contentMode: .fit)
-                                    .frame(width: 60, height: 50)
-                                Text("View Attendance")
-                                    .font(.system(size: 20).weight(.bold))
-                                    .foregroundColor(.black)
-                            }
-                            .padding()
-                            .background(RoundedRectangle(cornerRadius: 10).fill(Color.gray.opacity(0.2)))
-                            .frame(width: geometry.size.width * 0.4) // Adjust as needed
-                        }
-                        Spacer()
+
+                    Button(action: {
+                        showUploadStorageView.toggle()
+                    }) {
+                        DashboardButtonView(imageName: "noteIc", title: "Upload Assignment")
+                    }
+                    .sheet(isPresented: $showUploadStorageView) {
+                        UploadStorageView()
                     }
                 }
-                .frame(maxWidth: .infinity)
-                .padding(.vertical, 20)
-                .background(Color.white)
-                .padding(.horizontal, 20)
-                
-                Spacer()
+
+                // Middle row with upload notes and add people buttons
+                HStack(spacing: 20) {
+                    Button(action: {
+                        print("Upload Notes Button Tapped")
+                    }) {
+                        DashboardButtonView(imageName: "noteIc", title: "Upload Notes")
+                    }
+
+                    Button(action: {
+                        print("Add People Button Tapped")
+                    }) {
+                        DashboardButtonView(imageName: "studentIc", title: "Add People")
+                    }
+                }
+
+                // Bottom row with view attendance and edit profile buttons
+                HStack(spacing: 20) {
+                    Button(action: {
+                        showAttendanceView.toggle() // Toggle state to show TutorAttendanceView
+                    }) {
+                        DashboardButtonView(imageName: "attendenceIc", title: "View Attendance")
+                    }
+                    .sheet(isPresented: $showAttendanceView) {
+                        TutorAttendanceView(classId: "classId1") // Present TutorAttendanceView
+                    }
+
+                    Button(action: {
+                        showEditProfileView.toggle()
+                    }) {
+                        DashboardButtonView(imageName: "system:person.crop.circle.fill", title: "Edit Profile") // System icon example
+                    }
+                    .sheet(isPresented: $showEditProfileView) {
+                        EditProfileView()
+                    }
+                }
             }
-            .frame(width: geometry.size.width, height: geometry.size.height)
-            .background(Color.white)
-            .navigationBarBackButtonHidden(true) // Hide the back button
+            .padding()
+            .background(Color.white.ignoresSafeArea()) // Background color
+            .navigationTitle("Tutor Dashboard")
+            .navigationBarBackButtonHidden(true)
         }
     }
 }

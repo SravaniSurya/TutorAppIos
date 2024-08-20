@@ -2,7 +2,7 @@
 //  ContentView.swift
 //  Tutor App
 //
-//  Created by Muthu on 17/07/24.
+//  Created by Midhun on 17/07/24.
 //
 
 import SwiftUI

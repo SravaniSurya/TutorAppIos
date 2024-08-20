@@ -28,10 +28,11 @@ struct TutorLoginView: View {
                         .resizable()
                         .aspectRatio(contentMode: .fit)
                         .frame(width: 200, height: 200)
-
                 }
+
                 Text("Provide your email and password")
                     .foregroundStyle(.gray)
+
                 TextField("Email", text: $email)
                     .textFieldStyle(.roundedBorder)
                     .padding(.horizontal, 20)
@@ -47,7 +48,9 @@ struct TutorLoginView: View {
                         .foregroundColor(.white)
                         .padding(.vertical, 10)
                         .frame(maxWidth: .infinity)
-                        .background(Color.blue)
+                        .background(
+                            LinearGradient(gradient: Gradient(colors: [Color.blue, Color.purple]), startPoint: .leading, endPoint: .trailing)
+                        )
                         .cornerRadius(10)
                 }
                 .padding(.horizontal, 20)
@@ -69,10 +72,13 @@ struct TutorLoginView: View {
                 }
             }
             .padding()
+            .background(
+                LinearGradient(gradient: Gradient(colors: [Color.purple.opacity(0.2), Color.blue.opacity(0.2)]), startPoint: .topLeading, endPoint: .bottomTrailing)
+                    .ignoresSafeArea()
+            )
             .navigationTitle("Tutor Login")
-            .navigationBarTitleDisplayMode(.inline)
-            .navigationBarBackButtonHidden(true) // Hide the back button
         }
+        .navigationBarBackButtonHidden(true) // Hide the back button
     }
 
     private func loginUser(email: String, password: String, userType: String) {

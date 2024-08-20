@@ -11,10 +11,13 @@ struct DashboardView: View {
     var body: some View {
         NavigationView {
             ZStack {
-                Color.white // Background color for entire view
+                LinearGradient(gradient: Gradient(colors: [Color.blue.opacity(0.3), Color.purple.opacity(0.3)]),
+                               startPoint: .top, endPoint: .bottom)
+                    .ignoresSafeArea()
+
                 VStack {
                     Spacer()
-                    VStack(spacing: 50) {
+                    VStack(spacing: 40) {
                         // Button for Tutor options
                         NavigationLink(destination: TutorSignUpView()) {
                             VStack {
@@ -23,31 +26,33 @@ struct DashboardView: View {
                                     .aspectRatio(contentMode: .fit)
                                     .frame(width: 60, height: 50)
                                 Text("Tutor")
-                                    .font(.system(size: 24).weight(.bold))
-                                    .foregroundColor(.black)
+                                    .font(.system(size: 22).weight(.semibold))
+                                    .foregroundColor(.primary)
                             }
                         }
                         .frame(maxWidth: .infinity)
                         .padding()
-                        .background(RoundedRectangle(cornerRadius: 10).fill(Color.gray.opacity(0.2)))
-                        .padding(.horizontal, 50)
+                        .background(RoundedRectangle(cornerRadius: 15).fill(Color.white.opacity(0.7)))
+                        .shadow(color: Color.black.opacity(0.1), radius: 8, x: 0, y: 4)
+                        .padding(.horizontal, 30)
 
                         // Button for Student options
-                        NavigationLink(destination: TutorSignUpView()) {
+                        NavigationLink(destination: StudentSignUpView()) {
                             VStack {
                                 Image("studentIc")
                                     .resizable()
                                     .aspectRatio(contentMode: .fit)
                                     .frame(width: 45, height: 45)
                                 Text("Student")
-                                    .font(.system(size: 24).weight(.bold))
-                                    .foregroundColor(.black)
+                                    .font(.system(size: 22).weight(.semibold))
+                                    .foregroundColor(.primary)
                             }
                         }
                         .frame(maxWidth: .infinity)
                         .padding()
-                        .background(RoundedRectangle(cornerRadius: 10).fill(Color.gray.opacity(0.2)))
-                        .padding(.horizontal, 50)
+                        .background(RoundedRectangle(cornerRadius: 15).fill(Color.white.opacity(0.7)))
+                        .shadow(color: Color.black.opacity(0.1), radius: 8, x: 0, y: 4)
+                        .padding(.horizontal, 30)
 
                         // Button for Parent options
                         NavigationLink(destination: ParentSignUpView()) {
@@ -57,18 +62,17 @@ struct DashboardView: View {
                                     .aspectRatio(contentMode: .fit)
                                     .frame(width: 60, height: 50)
                                 Text("Parent")
-                                    .font(.system(size: 24).weight(.bold))
-                                    .foregroundColor(.black)
+                                    .font(.system(size: 22).weight(.semibold))
+                                    .foregroundColor(.primary)
                             }
                         }
                         .frame(maxWidth: .infinity)
                         .padding()
-                        .background(RoundedRectangle(cornerRadius: 10).fill(Color.gray.opacity(0.2)))
-                        .padding(.horizontal, 50)
+                        .background(RoundedRectangle(cornerRadius: 15).fill(Color.white.opacity(0.7)))
+                        .shadow(color: Color.black.opacity(0.1), radius: 8, x: 0, y: 4)
+                        .padding(.horizontal, 30)
                     }
-                    .frame(maxWidth: .infinity)
                     .padding(.vertical, 20)
-                    .background(Color.white)
 
                     Spacer()
                 }

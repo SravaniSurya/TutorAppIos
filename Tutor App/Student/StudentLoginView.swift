@@ -28,8 +28,8 @@ struct StudentLoginView: View {
                         .resizable()
                         .aspectRatio(contentMode: .fit)
                         .frame(width: 200, height: 200)
-                    
                 }
+                
                 Text("Provide your email and password")
                     .foregroundStyle(.gray)
                 
@@ -48,7 +48,9 @@ struct StudentLoginView: View {
                         .foregroundColor(.white)
                         .padding(.vertical, 10)
                         .frame(maxWidth: .infinity)
-                        .background(Color.blue)
+                        .background(
+                            LinearGradient(gradient: Gradient(colors: [Color.blue, Color.purple]), startPoint: .leading, endPoint: .trailing)
+                        )
                         .cornerRadius(10)
                 }
                 .padding(.horizontal, 20)
@@ -68,12 +70,16 @@ struct StudentLoginView: View {
                         .foregroundColor(.blue)
                         .padding()
                 }
-
             }
             .padding()
+            .background(
+                LinearGradient(gradient: Gradient(colors: [Color.blue.opacity(0.2), Color.purple.opacity(0.2)]), startPoint: .topLeading, endPoint: .bottomTrailing)
+                    .ignoresSafeArea()
+            )
             .navigationTitle("Student Login")
             .navigationBarTitleDisplayMode(.inline)
         }
+        .navigationBarBackButtonHidden(true)
     }
     
     private func loginUser(email: String, password: String, userType: String) {

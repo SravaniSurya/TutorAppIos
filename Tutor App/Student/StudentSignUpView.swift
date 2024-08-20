@@ -1,10 +1,3 @@
-//
-//  StudentSignUpView.swift
-//  Tutor App
-//
-//  Created by Midhun on 17/07/24.
-//
-
 import SwiftUI
 
 struct StudentSignUpView: View {
@@ -14,7 +7,7 @@ struct StudentSignUpView: View {
     @State private var password = ""
     @State private var confirmPassword = ""
     @State private var errorMessage: String?
-    @State private var isSignedUp = false // State for navigation
+    @State private var isSignedUp = false
     
     var body: some View {
         NavigationStack {
@@ -22,73 +15,115 @@ struct StudentSignUpView: View {
                 Image("tutorBook")
                     .resizable()
                     .aspectRatio(contentMode: .fit)
-                    .frame(width: 250, height: 250)
+                    .frame(width: 200, height: 200)
+                    .padding(.top, 20)
 
-                Text("Welcome ! Please create your student account to access our tutoring service and connect with teachers")
-                    .font(.system(size: 16))
+                Text("Welcome! Please create your student account to access our tutoring service and connect with teachers.")
+                    .font(.title2)
+                    .fontWeight(.bold)
                     .multilineTextAlignment(.center)
-                    .fontWeight(.semibold)
-                    .padding()
-                
-                TextField("Username", text: $username)
-                    .textFieldStyle(.roundedBorder)
                     .padding(.horizontal, 20)
-                
-                TextField("Email", text: $email)
-                    .textFieldStyle(.roundedBorder)
+                    .padding(.bottom, 30)
+
+                VStack(spacing: 15) {
+                    HStack {
+                        Image(systemName: "person")
+                            .foregroundColor(.gray)
+                            .padding(.leading, 10)
+                        TextField("Username", text: $username)
+                            .padding()
+                            .background(RoundedRectangle(cornerRadius: 10).fill(Color.gray.opacity(0.1)))
+                            .padding(.trailing, 10)
+                    }
+                    .padding(.horizontal, 20)
+
+                    HStack {
+                        Image(systemName: "envelope")
+                            .foregroundColor(.gray)
+                            .padding(.leading, 10)
+                        TextField("Email", text: $email)
+                            .padding()
+                            .background(RoundedRectangle(cornerRadius: 10).fill(Color.gray.opacity(0.1)))
+                            .padding(.trailing, 10)
+                    }
                     .padding(.horizontal, 20)
                     .keyboardType(.emailAddress)
-                
-                SecureField("Password", text: $password)
-                    .textFieldStyle(.roundedBorder)
+
+                    HStack {
+                        Image(systemName: "lock")
+                            .foregroundColor(.gray)
+                            .padding(.leading, 10)
+                        SecureField("Password", text: $password)
+                            .padding()
+                            .background(RoundedRectangle(cornerRadius: 10).fill(Color.gray.opacity(0.1)))
+                            .padding(.trailing, 10)
+                    }
                     .padding(.horizontal, 20)
-                
-                SecureField("Confirm Password", text: $confirmPassword)
-                    .textFieldStyle(.roundedBorder)
+
+                    HStack {
+                        Image(systemName: "lock.fill")
+                            .foregroundColor(.gray)
+                            .padding(.leading, 10)
+                        SecureField("Confirm Password", text: $confirmPassword)
+                            .padding()
+                            .background(RoundedRectangle(cornerRadius: 10).fill(Color.gray.opacity(0.1)))
+                            .padding(.trailing, 10)
+                    }
                     .padding(.horizontal, 20)
-                
+                }
+
                 Button(action: {
                     signupUser(email: email, password: password, username: username, userType: "student") { result in
                         switch result {
                         case .success:
-                            isSignedUp = true // Trigger navigation
+                            isSignedUp = true
                         case .failure(let error):
                             errorMessage = error.localizedDescription
                         }
                     }
-
                 }) {
                     Text("Sign Up")
+                        .font(.headline)
                         .foregroundColor(.white)
                         .padding()
-                        .background(Color.blue)
+                        .frame(maxWidth: .infinity)
+                        .background(LinearGradient(gradient: Gradient(colors: [Color.blue, Color.purple]), startPoint: .leading, endPoint: .trailing))
                         .cornerRadius(10)
+                        .padding(.horizontal, 20)
                 }
-                
+                .padding(.top, 20)
+
                 if let errorMessage = errorMessage {
                     Text(errorMessage)
                         .foregroundColor(.red)
-                        .padding()
+                        .padding(.top, 10)
                 }
-                
-                Spacer() // To push the login button to the bottom
+
+                Spacer()
                 
                 HStack {
                     Text("Already have an account?")
+                        .font(.system(size: 14))
                     Button(action: {
-                        
+                        isSignedUp = true
                     }) {
                         Text("Login")
+                            .font(.system(size: 14, weight: .bold))
                             .foregroundColor(.blue)
                     }
                 }
-                .padding()
+                .padding(.bottom, 20)
             }
-            .padding()
+            .background(
+                LinearGradient(gradient: Gradient(colors: [Color.purple.opacity(0.2), Color.blue.opacity(0.2)]), startPoint: .topLeading, endPoint: .bottomTrailing)
+                    .ignoresSafeArea()
+            )
+            .navigationBarBackButtonHidden(true)
             .background(
                 NavigationLink(destination: StudentLoginView(), isActive: $isSignedUp) {
                     EmptyView()
                 }
+                .hidden()
             )
         }
     }

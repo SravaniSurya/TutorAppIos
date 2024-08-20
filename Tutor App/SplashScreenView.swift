@@ -10,9 +10,9 @@ import SwiftUI
 struct SplashScreenView: View {
     var body: some View {
         ZStack {
-            Image("logoIc")
+            Image("tutorConnect")
                 .resizable()
-                .scaledToFill()
+                .aspectRatio(contentMode: .fit)
                 .edgesIgnoringSafeArea(.all)
                 .opacity(0.3)
         }
