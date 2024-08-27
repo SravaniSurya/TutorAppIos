@@ -9,7 +9,9 @@ struct StudentUploadView: View {
     @State private var errorMessage: String?
     @State private var showSuccessAlert = false
     
-    // Environment variable to control view presentation
+    // Add these variables to track uploader info
+    var uploaderRole: String
+    
     @Environment(\.presentationMode) var presentationMode
 
     var body: some View {
@@ -89,7 +91,6 @@ struct StudentUploadView: View {
                 title: Text("Success"),
                 message: Text("Assignment uploaded successfully"),
                 dismissButton: .default(Text("OK"), action: {
-                    // Dismiss the view after the alert is dismissed
                     DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
                         presentationMode.wrappedValue.dismiss()
                     }
@@ -133,7 +134,13 @@ struct StudentUploadView: View {
         let databaseRef = Database.database().reference()
         let assignmentsRef = databaseRef.child("assignments")
         let newAssignmentRef = assignmentsRef.childByAutoId()
-        newAssignmentRef.setValue(["fileURL": fileURL.absoluteString]) { error, _ in
+        
+        let assignmentData: [String: Any] = [
+            "fileURL": fileURL.absoluteString,
+            "uploaderRole": uploaderRole
+        ]
+        
+        newAssignmentRef.setValue(assignmentData) { error, _ in
             if let error = error {
                 print("Error saving file URL to database: \(error.localizedDescription)")
             } else {
@@ -141,8 +148,4 @@ struct StudentUploadView: View {
             }
         }
     }
-}
-
-#Preview {
-    StudentUploadView()
 }

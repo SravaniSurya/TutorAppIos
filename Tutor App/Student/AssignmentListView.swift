@@ -2,26 +2,25 @@
 //  AssignmentListView.swift
 //  Tutor App
 //
-//  Created by Midhun on 02/08/24.
-//
+//  Created by Muthu on 02/08/24.
 
 import SwiftUI
 import Firebase
 
 struct AssignmentListView: View {
-    @State private var assignmentURLs: [URL] = []
+    @State private var assignments: [Assignment] = []
 
     var body: some View {
         NavigationStack {
             VStack {
-                if assignmentURLs.isEmpty {
+                if assignments.isEmpty {
                     Text("No uploaded assignments")
                         .font(.headline)
                         .foregroundColor(.gray)
                         .padding()
                 } else {
-                    List(assignmentURLs, id: \.self) { url in
-                        AssignmentRow(url: url)
+                    List(assignments, id: \.id) { assignment in
+                        AssignmentRow(assignment: assignment)
                     }
                     .listStyle(PlainListStyle())
                 }
@@ -41,44 +40,53 @@ struct AssignmentListView: View {
         let assignmentsRef = databaseRef.child("assignments")
 
         assignmentsRef.observeSingleEvent(of: .value) { snapshot in
-            var urls: [URL] = []
+            var fetchedAssignments: [Assignment] = []
             for child in snapshot.children {
                 if let snapshot = child as? DataSnapshot,
                    let value = snapshot.value as? [String: Any],
                    let fileURLString = value["fileURL"] as? String,
-                   let fileURL = URL(string: fileURLString) {
-                    urls.append(fileURL)
+                   let fileURL = URL(string: fileURLString),
+                   let uploaderRole = value["uploaderRole"] as? String {
+                    let assignment = Assignment(id: snapshot.key, fileURL: fileURL, uploaderRole: uploaderRole)
+                    fetchedAssignments.append(assignment)
                 }
             }
-            assignmentURLs = urls
+            assignments = fetchedAssignments
         }
     }
 }
 
 struct AssignmentRow: View {
-    var url: URL
+    var assignment: Assignment
 
     var body: some View {
         HStack {
             VStack(alignment: .leading) {
-                Text("Assignment")
+                Text("Uploaded by (\(assignment.uploaderRole))")
                     .font(.headline)
                     .padding(.bottom, 2)
-                Link("View Assignment", destination: url)
+                Link("View Assignment", destination: assignment.fileURL)
                     .foregroundColor(.blue)
                     .font(.subheadline)
                     .padding(.bottom, 4)
-                Text(url.lastPathComponent)
+                Text(assignment.fileURL.lastPathComponent)
                     .font(.caption)
                     .foregroundColor(.gray)
             }
             .padding()
-            .background(Color.white) // Card background color
+            .background(Color.white) 
             .cornerRadius(10)
             .shadow(color: Color.black.opacity(0.1), radius: 5, x: 0, y: 2)
         }
         .padding(.horizontal)
     }
+}
+
+// Model to represent an assignment
+struct Assignment: Identifiable {
+    var id: String
+    var fileURL: URL
+    var uploaderRole: String
 }
 
 #Preview {

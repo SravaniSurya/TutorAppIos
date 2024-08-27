@@ -2,7 +2,7 @@
 //  TutorLoginView.swift
 //  Tutor App
 //
-//  Created by Midhun on 17/07/24.
+//  Created by Muthu on 17/07/24.
 //
 
 import SwiftUI
@@ -94,8 +94,10 @@ struct TutorLoginView: View {
                 if snapshot.exists() {
                     isLoggedIn = true
                 } else {
-                    errorMessage = "User is not a valid tutor."
+                    errorMessage = "User is not a valid \(userType)."
                 }
+            } withCancel: { error in
+                errorMessage = error.localizedDescription
             }
         }
     }

@@ -30,30 +30,15 @@ struct TutorDashboard: View {
                     }
                 }
 
-                // Middle row with upload notes and add people buttons
-                HStack(spacing: 20) {
-                    Button(action: {
-                        print("Upload Notes Button Tapped")
-                    }) {
-                        DashboardButtonView(imageName: "noteIc", title: "Upload Notes")
-                    }
-
-                    Button(action: {
-                        print("Add People Button Tapped")
-                    }) {
-                        DashboardButtonView(imageName: "studentIc", title: "Add People")
-                    }
-                }
-
                 // Bottom row with view attendance and edit profile buttons
                 HStack(spacing: 20) {
                     Button(action: {
                         showAttendanceView.toggle() // Toggle state to show TutorAttendanceView
                     }) {
-                        DashboardButtonView(imageName: "attendenceIc", title: "View Attendance")
+                        DashboardButtonView(imageName: "attendenceIc", title: "Attendance Note")
                     }
                     .sheet(isPresented: $showAttendanceView) {
-                        TutorAttendanceView(classId: "classId1") // Present TutorAttendanceView
+                        TutorAttendanceView() // Present TutorAttendanceView
                     }
 
                     Button(action: {

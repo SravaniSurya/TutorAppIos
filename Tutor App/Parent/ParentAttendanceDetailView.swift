@@ -1,38 +1,48 @@
+//
+//  ParentAttendanceDetailView.swift
+//  Tutor App
+//
+//  Created by Muthu on 24/08/24.
+//
+
 import SwiftUI
 import FirebaseDatabase
 
-struct StudentAttendanceView: View {
+struct ParentAttendanceDetailView: View {
+    let student: Student
     @State private var attendanceRecords: [AttendanceRecord] = []
+    @State private var isLoading = true
     @State private var errorMessage: String?
-    
-    var studentId: String // Pass the actual student ID here
 
     var body: some View {
         VStack {
-            Text("Attendance Records")
+            Text("\(student.name) Attendance Records")
                 .font(.largeTitle)
                 .padding()
             
-            List(attendanceRecords) { record in
-                VStack(alignment: .leading) {
-                    Text("Date: \(record.date, formatter: dateFormatter)")
-                    Text("Status: \(record.status.rawValue.capitalized)")
-                    if let remark = record.remark, !remark.isEmpty {
-                        Text("Remark: \(remark)")
-                    }
-                }
-                .padding()
-            }
-            
-            if let errorMessage = errorMessage {
+            if isLoading {
+                ProgressView()
+            } else if let errorMessage = errorMessage {
                 Text(errorMessage)
                     .foregroundColor(.red)
                     .padding()
+            } else {
+                List(attendanceRecords) { record in
+                    VStack(alignment: .leading) {
+                        Text("Date: \(dateFormatter.string(from: record.date))")
+                        Text("Status: \(record.status.rawValue.capitalized)")
+                        if let remark = record.remark, !remark.isEmpty {
+                            Text("Remark: \(remark)")
+                        }
+                    }
+                    .padding()
+                }
             }
         }
         .padding()
         .background(Color(.systemGroupedBackground).ignoresSafeArea())
         .onAppear(perform: loadAttendanceRecords)
+        .navigationTitle("\(student.name) Attendance")
     }
     
     private func loadAttendanceRecords() {
@@ -55,7 +65,7 @@ struct StudentAttendanceView: View {
                             continue
                         }
                         
-                        if id == studentId {
+                        if id == student.id {
                             let date = dateFormatter.date(from: dateKey) ?? Date()
                             let record = AttendanceRecord(studentId: id, date: date, status: status, remark: remark)
                             
@@ -66,16 +76,17 @@ struct StudentAttendanceView: View {
             }
             
             if records.isEmpty {
-                self.errorMessage = "No attendance records"
+                self.errorMessage = "No attendance record for this student"
             } else {
                 self.errorMessage = nil
             }
             
             self.attendanceRecords = records
-            print("Fetched records: \(records)") // Debug print statement
+            self.isLoading = false
         } withCancel: { error in
             self.errorMessage = "Failed to load attendance records: \(error.localizedDescription)"
             print("Firebase Error: \(error.localizedDescription)") // Debug print statement
+            self.isLoading = false
         }
     }
 
@@ -86,28 +97,5 @@ struct StudentAttendanceView: View {
     }
 }
 
-struct StudentAttendanceView_Previews: PreviewProvider {
-    static var previews: some View {
-        StudentAttendanceView(studentId: "PeBb34MYgUNnITlCvCj2cvsRTHK2")
-    }
-}
 
-struct AttendanceRecord: Identifiable {
-    let id: String // Change this to a unique identifier
-    let date: Date
-    let status: Status
-    let remark: String?
-    
-    init(studentId: String, date: Date, status: Status, remark: String?) {
-        self.id = "\(studentId)_\(date.timeIntervalSince1970)" // Unique ID combining student ID and date
-        self.date = date
-        self.status = status
-        self.remark = remark
-    }
-}
-
-enum Status: String {
-    case present
-    case absent
-}
 

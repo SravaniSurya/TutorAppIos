@@ -8,7 +8,6 @@ struct ParentSignUpView: View {
     @State private var confirmPassword = ""
     @State private var errorMessage: String?
     @State private var isSignedUp = false
-    @State private var isLoginTapped = false
     
     var body: some View {
         NavigationStack {
@@ -106,7 +105,7 @@ struct ParentSignUpView: View {
                     Text("Already have an account?")
                         .font(.system(size: 14))
                     Button(action: {
-                        isLoginTapped = true
+                        isSignedUp = true
                     }) {
                         Text("Login")
                             .font(.system(size: 14, weight: .bold))
@@ -121,7 +120,7 @@ struct ParentSignUpView: View {
             )
             .navigationBarBackButtonHidden(true)
             .background(
-                NavigationLink(destination: ParentLoginView(), isActive: $isLoginTapped) {
+                NavigationLink(destination: ParentLoginView(), isActive: $isSignedUp) {
                     EmptyView()
                 }
             )
@@ -132,4 +131,3 @@ struct ParentSignUpView: View {
 #Preview {
     ParentSignUpView()
 }
-

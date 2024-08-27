@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		14E5135C2C7E5CDB00A41B45 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 14E5135B2C7E5CDB00A41B45 /* GoogleService-Info.plist */; };
 		597AD328BC57834C84F01250 /* Pods_Tutor_App.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E25C5D0AD89EAA52712AF001 /* Pods_Tutor_App.framework */; };
 		D91A2A4D2C73B09300A481D1 /* StudentEditProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D91A2A4C2C73B09300A481D1 /* StudentEditProfileView.swift */; };
 		D91A2A4F2C746D9900A481D1 /* DashboardButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D91A2A4E2C746D9900A481D1 /* DashboardButtonView.swift */; };
@@ -16,7 +17,6 @@
 		D92621F12C47C671001BD2A3 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D92621F02C47C671001BD2A3 /* ContentView.swift */; };
 		D92621F32C47C673001BD2A3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D92621F22C47C673001BD2A3 /* Assets.xcassets */; };
 		D92621F62C47C673001BD2A3 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D92621F52C47C673001BD2A3 /* Preview Assets.xcassets */; };
-		D92621FD2C47C707001BD2A3 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = D92621FC2C47C707001BD2A3 /* GoogleService-Info.plist */; };
 		D92621FF2C480CDA001BD2A3 /* SplashScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D92621FE2C480CDA001BD2A3 /* SplashScreenView.swift */; };
 		D92622012C48103D001BD2A3 /* DashboardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D92622002C48103D001BD2A3 /* DashboardView.swift */; };
 		D92622032C48118F001BD2A3 /* TutorSignUpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D92622022C48118F001BD2A3 /* TutorSignUpView.swift */; };
@@ -27,10 +27,13 @@
 		D92622112C481CAC001BD2A3 /* StudentLoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D92622102C481CAC001BD2A3 /* StudentLoginView.swift */; };
 		D92622132C481CF6001BD2A3 /* ParentLoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D92622122C481CF6001BD2A3 /* ParentLoginView.swift */; };
 		D92622152C482125001BD2A3 /* TutorDashboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = D92622142C482125001BD2A3 /* TutorDashboard.swift */; };
+		D9546BDE2C790957005B1F29 /* AttendanceDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9546BDD2C790957005B1F29 /* AttendanceDetailView.swift */; };
+		D9546BE22C79B69D005B1F29 /* ParentViewAttendance.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9546BE12C79B69D005B1F29 /* ParentViewAttendance.swift */; };
+		D9546BE62C79C264005B1F29 /* ParentAttendanceDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9546BE52C79C264005B1F29 /* ParentAttendanceDetailView.swift */; };
+		D9546BE82C79C474005B1F29 /* ParentEditProfile.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9546BE72C79C474005B1F29 /* ParentEditProfile.swift */; };
 		D98E90FF2C5B417E00A19E0D /* ParentDashboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = D98E90FE2C5B417E00A19E0D /* ParentDashboard.swift */; };
 		D98E91152C5D4E6100A19E0D /* UploadFileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D98E91142C5D4E6100A19E0D /* UploadFileView.swift */; };
 		D98E91172C5D4FC500A19E0D /* DocumentPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = D98E91162C5D4FC500A19E0D /* DocumentPicker.swift */; };
-		D98E91192C5D513F00A19E0D /* AddPeopleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D98E91182C5D513F00A19E0D /* AddPeopleView.swift */; };
 		D98E911B2C5D558800A19E0D /* AssignmentListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D98E911A2C5D558800A19E0D /* AssignmentListView.swift */; };
 		D9DEACFB2C632FC600A9A21B /* StudentUploadView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9DEACFA2C632FC600A9A21B /* StudentUploadView.swift */; };
 		D9DEACFD2C633C4200A9A21B /* EditProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9DEACFC2C633C4200A9A21B /* EditProfileView.swift */; };
@@ -41,6 +44,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		14E5135B2C7E5CDB00A41B45 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		2DDBDFA8DDC0C9114D950C1E /* Pods-Tutor App.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Tutor App.debug.xcconfig"; path = "Target Support Files/Pods-Tutor App/Pods-Tutor App.debug.xcconfig"; sourceTree = "<group>"; };
 		5E9FA25876743E21B8C71C84 /* Pods-Tutor App.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Tutor App.release.xcconfig"; path = "Target Support Files/Pods-Tutor App/Pods-Tutor App.release.xcconfig"; sourceTree = "<group>"; };
 		D91A2A4C2C73B09300A481D1 /* StudentEditProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudentEditProfileView.swift; sourceTree = "<group>"; };
@@ -52,7 +56,6 @@
 		D92621F02C47C671001BD2A3 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		D92621F22C47C673001BD2A3 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D92621F52C47C673001BD2A3 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
-		D92621FC2C47C707001BD2A3 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		D92621FE2C480CDA001BD2A3 /* SplashScreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashScreenView.swift; sourceTree = "<group>"; };
 		D92622002C48103D001BD2A3 /* DashboardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardView.swift; sourceTree = "<group>"; };
 		D92622022C48118F001BD2A3 /* TutorSignUpView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TutorSignUpView.swift; sourceTree = "<group>"; };
@@ -63,10 +66,13 @@
 		D92622102C481CAC001BD2A3 /* StudentLoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudentLoginView.swift; sourceTree = "<group>"; };
 		D92622122C481CF6001BD2A3 /* ParentLoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParentLoginView.swift; sourceTree = "<group>"; };
 		D92622142C482125001BD2A3 /* TutorDashboard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TutorDashboard.swift; sourceTree = "<group>"; };
+		D9546BDD2C790957005B1F29 /* AttendanceDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AttendanceDetailView.swift; sourceTree = "<group>"; };
+		D9546BE12C79B69D005B1F29 /* ParentViewAttendance.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParentViewAttendance.swift; sourceTree = "<group>"; };
+		D9546BE52C79C264005B1F29 /* ParentAttendanceDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParentAttendanceDetailView.swift; sourceTree = "<group>"; };
+		D9546BE72C79C474005B1F29 /* ParentEditProfile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParentEditProfile.swift; sourceTree = "<group>"; };
 		D98E90FE2C5B417E00A19E0D /* ParentDashboard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParentDashboard.swift; sourceTree = "<group>"; };
 		D98E91142C5D4E6100A19E0D /* UploadFileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UploadFileView.swift; sourceTree = "<group>"; };
 		D98E91162C5D4FC500A19E0D /* DocumentPicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DocumentPicker.swift; sourceTree = "<group>"; };
-		D98E91182C5D513F00A19E0D /* AddPeopleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddPeopleView.swift; sourceTree = "<group>"; };
 		D98E911A2C5D558800A19E0D /* AssignmentListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssignmentListView.swift; sourceTree = "<group>"; };
 		D9DEACFA2C632FC600A9A21B /* StudentUploadView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudentUploadView.swift; sourceTree = "<group>"; };
 		D9DEACFC2C633C4200A9A21B /* EditProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditProfileView.swift; sourceTree = "<group>"; };
@@ -135,8 +141,8 @@
 				D92621F02C47C671001BD2A3 /* ContentView.swift */,
 				D92621FE2C480CDA001BD2A3 /* SplashScreenView.swift */,
 				D926220E2C48197D001BD2A3 /* FirebaseManager.swift */,
+				14E5135B2C7E5CDB00A41B45 /* GoogleService-Info.plist */,
 				D92621F22C47C673001BD2A3 /* Assets.xcassets */,
-				D92621FC2C47C707001BD2A3 /* GoogleService-Info.plist */,
 				D92621F42C47C673001BD2A3 /* Preview Content */,
 			);
 			path = "Tutor App";
@@ -169,8 +175,8 @@
 				D98E91142C5D4E6100A19E0D /* UploadFileView.swift */,
 				D98E91162C5D4FC500A19E0D /* DocumentPicker.swift */,
 				D9DEACFC2C633C4200A9A21B /* EditProfileView.swift */,
-				D98E91182C5D513F00A19E0D /* AddPeopleView.swift */,
 				D91A2A522C7475BE00A481D1 /* TutorAttendanceView.swift */,
+				D9546BDD2C790957005B1F29 /* AttendanceDetailView.swift */,
 			);
 			path = Tutor;
 			sourceTree = "<group>";
@@ -197,6 +203,9 @@
 				D92622122C481CF6001BD2A3 /* ParentLoginView.swift */,
 				D9FF141B2C482D5E00C0E229 /* ParentResetPassword.swift */,
 				D98E90FE2C5B417E00A19E0D /* ParentDashboard.swift */,
+				D9546BE72C79C474005B1F29 /* ParentEditProfile.swift */,
+				D9546BE12C79B69D005B1F29 /* ParentViewAttendance.swift */,
+				D9546BE52C79C264005B1F29 /* ParentAttendanceDetailView.swift */,
 			);
 			path = Parent;
 			sourceTree = "<group>";
@@ -263,7 +272,7 @@
 			files = (
 				D92621F62C47C673001BD2A3 /* Preview Assets.xcassets in Resources */,
 				D92621F32C47C673001BD2A3 /* Assets.xcassets in Resources */,
-				D92621FD2C47C707001BD2A3 /* GoogleService-Info.plist in Resources */,
+				14E5135C2C7E5CDB00A41B45 /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -329,13 +338,16 @@
 				D926220F2C48197D001BD2A3 /* FirebaseManager.swift in Sources */,
 				D92622152C482125001BD2A3 /* TutorDashboard.swift in Sources */,
 				D9DEACFB2C632FC600A9A21B /* StudentUploadView.swift in Sources */,
+				D9546BE22C79B69D005B1F29 /* ParentViewAttendance.swift in Sources */,
 				D92622012C48103D001BD2A3 /* DashboardView.swift in Sources */,
 				D91A2A532C7475BE00A481D1 /* TutorAttendanceView.swift in Sources */,
 				D92621EF2C47C671001BD2A3 /* TutorApp.swift in Sources */,
 				D926220B2C4815E5001BD2A3 /* ParentSignUpView.swift in Sources */,
+				D9546BE62C79C264005B1F29 /* ParentAttendanceDetailView.swift in Sources */,
 				D9FF14162C48279F00C0E229 /* Studentdashboard.swift in Sources */,
+				D9546BDE2C790957005B1F29 /* AttendanceDetailView.swift in Sources */,
+				D9546BE82C79C474005B1F29 /* ParentEditProfile.swift in Sources */,
 				D92622092C481393001BD2A3 /* StudentSignUpView.swift in Sources */,
-				D98E91192C5D513F00A19E0D /* AddPeopleView.swift in Sources */,
 				D91A2A4D2C73B09300A481D1 /* StudentEditProfileView.swift in Sources */,
 				D9DEACFD2C633C4200A9A21B /* EditProfileView.swift in Sources */,
 				D92621FF2C480CDA001BD2A3 /* SplashScreenView.swift in Sources */,

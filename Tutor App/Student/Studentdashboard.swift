@@ -3,14 +3,16 @@ import SwiftUI
 struct StudentDashboard: View {
     @State private var showingEditProfile = false
     @State private var showingUploadFile = false
-    @State private var showingAssignmentList = false // State to control the presentation of AssignmentListView
+    @State private var showingAssignmentList = false
+    @State private var showingAttendance = false
+    var studentId: String
 
     var body: some View {
         NavigationStack {
+           
             VStack(spacing: 20) {
-                // Top row with assignment buttons
+                Spacer()
                 HStack(spacing: 20) {
-                    // View Assignment Button
                     Button(action: {
                         showingAssignmentList = true
                     }) {
@@ -20,37 +22,49 @@ struct StudentDashboard: View {
                         AssignmentListView()
                     }
 
-                    // Upload Assignment Button
                     Button(action: {
                         showingUploadFile = true
                     }) {
                         DashboardButtonView(imageName: "uploadIc", title: "Upload Assignment")
                     }
                     .sheet(isPresented: $showingUploadFile) {
-                        StudentUploadView()
+                        StudentUploadView(uploaderRole: "Student")
                     }
                 }
                 
-                // Edit Profile Button
-                Button(action: {
-                    showingEditProfile = true
-                }) {
-                    DashboardButtonView(imageName: "system:person.fill", title: "Edit Profile") // System icon example
+                HStack(spacing: 20) {
+                    Button(action: {
+                        showingAttendance = true
+                    }) {
+                        DashboardButtonView(imageName: "attendenceIc", title: "View Attendance")
+                    }
+                    .sheet(isPresented: $showingAttendance) {
+                        StudentAttendanceView(studentId: studentId)
+                    }
+                    
+                    Button(action: {
+                        showingEditProfile = true
+                    }) {
+                        DashboardButtonView(imageName: "system:person.fill", title: "Edit Profile")
+                    }
+                    .sheet(isPresented: $showingEditProfile) {
+                        StudentEditProfileView()
+                    }
                 }
-                .sheet(isPresented: $showingEditProfile) {
-                    StudentEditProfileView()
-                }
-                
                 Spacer()
             }
             .padding()
-            .background(Color.white.ignoresSafeArea()) // Background color
+            .background(Color.white.ignoresSafeArea())
             .navigationTitle("Student Dashboard")
             .navigationBarBackButtonHidden(true)
+            .onAppear {
+                // Debug print to check studentId
+                print("StudentDashboard studentId: \(studentId)")
+            }
         }
     }
 }
 
 #Preview {
-    StudentDashboard()
+    StudentDashboard(studentId: "sampleStudentId")
 }

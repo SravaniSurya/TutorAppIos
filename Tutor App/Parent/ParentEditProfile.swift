@@ -1,8 +1,15 @@
+//
+//  ParentEditProfile.swift
+//  Tutor App
+//
+//  Created by Muthu on 24/08/24.
+//
+
 import SwiftUI
 import FirebaseAuth
 import FirebaseDatabase
 
-struct EditProfileView: View {
+struct ParentEditProfile: View {
     @State private var name: String = ""
     @State private var phone: String = ""
     @State private var profileImage: Image? = Image(systemName: "person.crop.circle.fill")
@@ -71,7 +78,7 @@ struct EditProfileView: View {
         guard let uid = Auth.auth().currentUser?.uid else { return }
         
         // Pass "student" as the userType when fetching user data
-        fetchUserProfile(uid: uid, userType: "tutor") { result in
+        fetchUserProfile(uid: uid, userType: "parent") { result in
             switch result {
             case .success(let userData):
                 // Update state with fetched user data
@@ -120,42 +127,6 @@ struct EditProfileView: View {
                 ]
                 showSuccessAlert = true
             }
-        }
-    }
-}
-
-// Image Picker for selecting profile picture
-struct ImagePicker: UIViewControllerRepresentable {
-    @Binding var image: UIImage?
-
-    func makeCoordinator() -> Coordinator {
-        Coordinator(self)
-    }
-
-    func makeUIViewController(context: Context) -> UIImagePickerController {
-        let picker = UIImagePickerController()
-        picker.allowsEditing = true
-        picker.sourceType = .photoLibrary
-        picker.delegate = context.coordinator
-        return picker
-    }
-
-    func updateUIViewController(_ uiViewController: UIImagePickerController, context: Context) {}
-
-    class Coordinator: NSObject, UINavigationControllerDelegate, UIImagePickerControllerDelegate {
-        var parent: ImagePicker
-
-        init(_ parent: ImagePicker) {
-            self.parent = parent
-        }
-
-        func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
-            if let uiImage = info[.editedImage] as? UIImage {
-                parent.image = uiImage
-            } else if let uiImage = info[.originalImage] as? UIImage {
-                parent.image = uiImage
-            }
-            picker.dismiss(animated: true)
         }
     }
 }

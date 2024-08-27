@@ -70,7 +70,8 @@ struct StudentEditProfileView: View {
     private func loadUserData() {
         guard let uid = Auth.auth().currentUser?.uid else { return }
         
-        fetchUserProfile(uid: uid, userType: userType) { result in
+        // Pass "student" as the userType when fetching user data
+        fetchUserProfile(uid: uid, userType: "student") { result in
             switch result {
             case .success(let userData):
                 // Update state with fetched user data

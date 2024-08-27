@@ -8,6 +8,7 @@ struct UploadStorageView: View {
     @State private var showDocumentPicker = false
     @State private var errorMessage: String?
     @State private var showSuccessAlert = false
+    @State private var uploaderRole: String = "Tutor" // Static role
     
     // Environment variable to control view presentation
     @Environment(\.presentationMode) var presentationMode
@@ -133,7 +134,14 @@ struct UploadStorageView: View {
         let databaseRef = Database.database().reference()
         let assignmentsRef = databaseRef.child("assignments")
         let newAssignmentRef = assignmentsRef.childByAutoId()
-        newAssignmentRef.setValue(["fileURL": fileURL.absoluteString]) { error, _ in
+        
+        // Add uploader's name and role
+        let assignmentData: [String: Any] = [
+            "fileURL": fileURL.absoluteString,
+            "uploaderRole": uploaderRole
+        ]
+        
+        newAssignmentRef.setValue(assignmentData) { error, _ in
             if let error = error {
                 print("Error saving file URL to database: \(error.localizedDescription)")
             } else {

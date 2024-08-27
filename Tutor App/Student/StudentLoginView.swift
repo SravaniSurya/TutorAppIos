@@ -2,7 +2,7 @@
 //  StudentLoginView.swift
 //  Tutor App
 //
-//  Created by Midhun on 17/07/24.
+//  Created by Muthu on 17/07/24.
 //
 
 import SwiftUI
@@ -14,6 +14,7 @@ struct StudentLoginView: View {
     @State private var password = ""
     @State private var isLoggedIn = false
     @State private var errorMessage: String?
+    @State private var studentId: String? // Add this state to store studentId
     
     var body: some View {
         NavigationStack {
@@ -61,7 +62,7 @@ struct StudentLoginView: View {
                         .padding()
                 }
                 
-                NavigationLink(destination: StudentDashboard(), isActive: $isLoggedIn) {
+                NavigationLink(destination: StudentDashboard(studentId: studentId ?? ""), isActive: $isLoggedIn) {
                     EmptyView()
                 }
                 
@@ -93,6 +94,7 @@ struct StudentLoginView: View {
             let ref = Database.database().reference().child(userType + "s").child(uid)
             ref.observeSingleEvent(of: .value) { snapshot in
                 if snapshot.exists() {
+                    studentId = uid // Store studentId
                     isLoggedIn = true
                 } else {
                     errorMessage = "User is not a valid student."
